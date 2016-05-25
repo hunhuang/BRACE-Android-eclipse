@@ -7,5 +7,7 @@
     <string name="action_nham">Tào lao bí đao</string>
     <string name="str_refresh">Refresh</string>
     <string name="str_connect">Connect</string>
+    <string name="str_disconnect">Disconnect</string>
+    <string name="str_stream">Stream</string>
     
 </resources>
