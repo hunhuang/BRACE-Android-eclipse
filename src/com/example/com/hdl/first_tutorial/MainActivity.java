@@ -43,7 +43,8 @@ public class MainActivity extends ActionBarActivity {
 	LineChart chart ;
 	OutputStream outputStream;
 	InputStream inStream;
-	BluetoothSocket socket;
+	BluetoothSocket socket;Scanner source;
+	customCanvas angleChart;
 	private void init() throws IOException {
 		BluetoothAdapter blueAdapter = BluetoothAdapter.getDefaultAdapter();
 		if (blueAdapter != null) {
@@ -69,12 +70,12 @@ public class MainActivity extends ActionBarActivity {
 	}
 	int countMess=0;
 	void appendMessage(String a){
-		countMess++;
-		if (countMess>10){
-			mainView.setText("");
-			countMess=0;
-		}
-		mainView.append(a);
+//		countMess++;
+//		if (countMess>10){
+//			mainView.setText("");
+//			countMess=0;
+//		}
+		mainView.setText(a);
 		
 	}
 	public void write(String s) throws IOException {
@@ -83,11 +84,11 @@ public class MainActivity extends ActionBarActivity {
 	class Task implements Runnable {
 		@Override
 		public void run() {
-			Scanner s=new Scanner(inStream);
-			s.useDelimiter("\n");
+			source=new Scanner(inStream);
+			source.useDelimiter("\n");
 			while (true && inStream != null) {
 				//				bytes = inStream.read(buffer, bytes, BUFFER_SIZE - bytes);
-				final String tam=s.next();
+				final String tam=source.next();
 				final String[] parts = tam.split(" ");
 				
 				//				String tam= new String(buffer,"UTF-8");
@@ -96,6 +97,9 @@ public class MainActivity extends ActionBarActivity {
 				      public final void run() {
 //				    	  appendMessage(tam);
 				    	  addPoint(Float.parseFloat(parts[1]));
+				    	  float angle=Float.parseFloat(parts[3]);
+				    	  
+				    	  angleChart.updateAngle(angle);
 				      } 
 				    });
 				
@@ -123,7 +127,7 @@ public class MainActivity extends ActionBarActivity {
 		//			appendMessage(tam +"\n");
 		//		}
 	}
-	public void disconnectBluetooth(View v){
+	public void disconnectBluetooth(){
 		if (inStream != null) {
 			try {inStream.close();} catch (Exception e) {}
 			inStream = null;
@@ -133,7 +137,9 @@ public class MainActivity extends ActionBarActivity {
 			try {outputStream.close();} catch (Exception e) {}
 			outputStream = null;
 		}
-
+//		if (source!=null){
+//			try{ source.close();} catch (Exception e){}
+//		}
 		if (socket != null) {
 			try {socket.close();} catch (Exception e) {}
 			socket = null;
@@ -148,20 +154,30 @@ public class MainActivity extends ActionBarActivity {
 		mainView = (TextView) findViewById(R.id.text1);
 		connectButton=(Button)findViewById(R.id.connect);
 		chart = (LineChart) findViewById(R.id.chart);
-
+		angleChart=(customCanvas) findViewById(R.id.signature_canvas);
 		runChart();
 
 
 	}
+	
 	public void ConnectClick(View v){
-		appendMessage("Connecting to device...");
-
-		try {
-			init();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			Toast.makeText(getApplicationContext(),"Error Loi",Toast.LENGTH_SHORT).show();
+		connectButton.setEnabled(false);
+		if (connectButton.getText()==getResources().getString(R.string.str_connect)){
+			appendMessage("Connecting to device...");
+			
+			
+			try {
+				init();
+				connectButton.setText(getResources().getString(R.string.str_disconnect));
+			} catch (IOException e) {
+				Toast.makeText(getApplicationContext(),"Error Loi",Toast.LENGTH_SHORT).show();
+			}
 		}
+		else{
+			connectButton.setText(getResources().getString(R.string.str_connect));
+			disconnectBluetooth();
+		}
+		connectButton.setEnabled(true);
 		//				try {
 		////					write("asdlasd");
 		//				} catch (IOException e) {

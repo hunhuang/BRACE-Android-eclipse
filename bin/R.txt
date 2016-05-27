@@ -472,7 +472,7 @@ int id always 0x7f090019
 int id beginning 0x7f09001e
 int id buttonPanel 0x7f09002b
 int id cancel_action 0x7f090057
-int id chart 0x7f090054
+int id chart 0x7f090053
 int id checkbox 0x7f090039
 int id chronometer 0x7f09005d
 int id collapseActionView 0x7f09001a
@@ -484,7 +484,6 @@ int id customPanel 0x7f090036
 int id decor_content_parent 0x7f09003f
 int id default_activity_button 0x7f090027
 int id disableHome 0x7f09000d
-int id disconnect 0x7f090051
 int id edit_query 0x7f090043
 int id end 0x7f09001f
 int id end_padder 0x7f090062
@@ -511,7 +510,8 @@ int id parentPanel 0x7f09002d
 int id progress_circular 0x7f090007
 int id progress_horizontal 0x7f090008
 int id radio 0x7f09003b
-int id refresh 0x7f090052
+int id refresh 0x7f090051
+int id saveToFile 0x7f090055
 int id screen 0x7f090015
 int id scrollIndicatorDown 0x7f090035
 int id scrollIndicatorUp 0x7f090032
@@ -531,7 +531,7 @@ int id shortcut 0x7f09003a
 int id showCustom 0x7f090010
 int id showHome 0x7f090011
 int id showTitle 0x7f090012
-int id signature_canvas 0x7f090055
+int id signature_canvas 0x7f090054
 int id spacer 0x7f09002c
 int id split_action_bar 0x7f090004
 int id src_atop 0x7f090016
@@ -541,7 +541,7 @@ int id status_bar_latest_event_content 0x7f090058
 int id submit_area 0x7f09004c
 int id tabMode 0x7f09000c
 int id text 0x7f090060
-int id text1 0x7f090053
+int id text1 0x7f090052
 int id text2 0x7f09005e
 int id textSpacerNoButtons 0x7f090034
 int id textView 0x7f090063
@@ -620,15 +620,15 @@ int string abc_searchview_description_voice 0x7f0a000c
 int string abc_shareactionprovider_share_with 0x7f0a0010
 int string abc_shareactionprovider_share_with_application 0x7f0a000f
 int string abc_toolbar_collapse_description 0x7f0a0004
-int string action_nham 0x7f0a0017
-int string action_settings 0x7f0a0016
+int string action_nham 0x7f0a0016
+int string action_settings 0x7f0a0015
 int string app_name 0x7f0a0014
-int string hello_world 0x7f0a0015
 int string status_bar_notification_info_overflow 0x7f0a0011
-int string str_connect 0x7f0a0019
-int string str_disconnect 0x7f0a001a
-int string str_refresh 0x7f0a0018
-int string str_stream 0x7f0a001b
+int string str_connect 0x7f0a0018
+int string str_disconnect 0x7f0a0019
+int string str_refresh 0x7f0a0017
+int string str_saveFile 0x7f0a001b
+int string str_stream 0x7f0a001a
 int style AlertDialog_AppCompat 0x7f0b0044
 int style AlertDialog_AppCompat_Light 0x7f0b0045
 int style Animation_AppCompat_Dialog 0x7f0b004b

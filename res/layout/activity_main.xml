@@ -15,19 +15,12 @@
         android:onClick="ConnectClick"
         android:text="@string/str_connect" />
 
-    <Button
-        android:id="@+id/disconnect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/connect"
-        android:onClick="disconnectBluetooth"
-        android:text="@string/str_disconnect" />
-
+   
     <Button
         android:id="@+id/refresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/disconnect"
+        android:layout_toRightOf="@id/connect"
         android:onClick="runningStream"
         android:text="@string/str_stream" />
 
@@ -37,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/refresh"
-        android:text="@string/hello_world" />
+        />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/chart"
@@ -51,5 +44,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF" />
-
+  <Button
+        android:id="@+id/saveToFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signature_canvas"
+        android:onClick="saveToFile"
+        android:text="@string/str_saveFile" />
+   
+    
 </RelativeLayout>
