@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+         xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.com.hdl.first_tutorial.subjectManager" >
+     <item
+        android:id="@+id/action_create_db"
+        android:orderInCategory="100"
+        android:title="Create DB"
+        app:showAsAction="always">
+       
+    </item>
+    <item
+        android:id="@+id/action_delete"
+        android:orderInCategory="100"
+        android:title="Delete"
+        app:showAsAction="always">
+       
+    </item>
+    <item
+        android:id="@+id/action_export_db"
+        android:orderInCategory="100"
+        android:title="Export"
+        app:showAsAction="always">
+       
+    </item>
+    <item
+        android:id="@+id/action_detail"
+        android:orderInCategory="100"
+        android:title="Details"
+        app:showAsAction="always">
+       
+    </item>
+</menu>

@@ -9,5 +9,6 @@
     <string name="str_disconnect">Disconnect</string>
     <string name="str_stream">Stream</string>
     <string name="str_saveFile">SAVE FILE</string>
-    
+    <string name="str_tare">Tare Scale</string>
+    <string name="str_resetAngle">Reset</string>
 </resources>
